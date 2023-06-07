@@ -1,0 +1,166 @@
+    @media only screen and (min-width:320px) and (max-width:991px) {}
+    /* tracking details */
+    
+    @media only screen and (min-width:576px) and (max-width:616px) {
+        .inner-txt-btn-g {
+            max-width: 100%;
+        }
+        .custom-txt-box-g {
+            width: 67%;
+        }
+    }
+    
+    @media only screen and (min-width:320px) and (max-width:474px) {
+        .bb-btn {
+            display: none;
+        }
+        .custom-txt-box-g {
+            width: 100%;
+        }
+        .back-up-btn {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+    /* end tracking */
+    /* Manage Employee */
+    
+    @media only screen and (min-width:320px) and (max-width:767px) {
+        .filter-form {
+            flex-direction: column;
+        }
+        .select-box-g {
+            width: 100%;
+            max-width: 100%;
+        }
+        #emp-name {
+            width: 100%;
+            max-width: 100%;
+        }
+        .filter-btn-sm {
+            margin-right: 0px;
+        }
+        .pagination-sec {
+            justify-content: center;
+        }
+        .from-inner-left {
+            margin-bottom: 20px;
+        }
+        .date-selection {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .date-pick {
+            margin-top: 20px;
+        }
+
+        .date-piks{
+            width: 100%;
+        }
+
+        .uploaded-value {
+            width: 55%;
+        }
+        .base_height {
+            height: auto;
+        }
+    }
+    
+    @media only screen and (min-width:320px) and (max-width:570px) {
+        .table-head {
+            flex-direction: column;
+            align-items: unset;
+        }
+        .table-btn-head {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .export-btn {
+            margin-right: 10px;
+            
+        }
+
+        .add-employee-btn{
+            margin-top: 10px;
+        }
+    }
+    
+    @media only screen and (min-width:320px) and (max-width:360px) {
+        .pagination a {
+            margin: 10px;
+        }
+        .pagination a.active {
+            margin: 5px 10px;
+        }
+
+        .edit-form-sec {
+            padding: 30px 15px;
+        }
+    }
+    /* End Manage  Employee */
+    /* Manage Employee add */
+    
+    @media only screen and (min-width:1300px) {
+        .form-input-side .txt-box-g,
+        .edit-select-g {
+            max-width: 100%;
+            width: 400px;
+        }
+    }
+    
+    @media only screen and (max-width:1299px) {
+        .edit-select-g {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    
+    @media only screen and (min-width:320px) and (max-width:767px) {
+        .from-inner-left {
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media only screen and (max-width:510px) {
+        .select-time-sec {
+            flex-direction: column;
+        }
+        .left-time {
+            margin: 20px auto;
+        }
+    }
+    
+    @media only screen and (max-width:443px) {
+        .cancel-btn {
+            margin-right: unset;
+            margin-bottom: 15px;
+        }
+    }
+    /* end manage employee add */
+
+    /* manage employee view */
+    @media only screen and (max-width: 991px) and (min-width: 768px){
+.from-inner-left {
+    margin-bottom: 20px;
+    }
+ .base_height {
+            height: auto;
+        }
+}
+
+@media only screen and (max-width:330px) {
+.inner-sc {
+    margin: 10px 0px;
+    margin-right: 30px;
+}}
+
+@media only screen and (max-width:570px) {
+.table-head {
+    flex-direction: column;
+}
+
+
+}
+
+    /* end manage employe view */

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Employee Productivity</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+
+            jQuery(function($) {
+
+                $(".sidebar-dropdown > a").click(function() {
+                    $(".sidebar-submenu").slideUp(200);
+                    if (
+                        $(this)
+                        .parent()
+                        .hasClass("active")
+                    ) {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .parent()
+                            .removeClass("active");
+                    } else {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .next(".sidebar-submenu")
+                            .slideDown(200);
+                        $(this)
+                            .parent()
+                            .addClass("active");
+                    }
+                });
+
+                $("#close-sidebar").click(function() {
+                    $(".page-wrapper").removeClass("toggled");
+                });
+                $("#show-sidebar").click(function() {
+                    $(".page-wrapper").addClass("toggled");
+                });
+
+
+
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="#">Employee <span>Tracking</span></a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                  <div class="dummy_padding"></div>
+
+                <div class="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                                <span>Manage Company</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>Manage Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <span>Edit Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-content  -->
+
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+             <div class="top_head">
+                <div class="top_head_lft"><img src="images/manage_company.png" /><span>Manage company</span></div>
+                <div class="top_head_rgt">
+                    <div class="sidebar-header">
+                        <div class="user-pic">
+                            <img class="img-responsive img-rounded" src="images/super_admin_profile.png" alt="User picture">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name"><strong>Denzel Washington</strong> 
+            
+          </span>
+                            <span class="user-name">Super Admin
+            
+          </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="container-fluid">
+                
+                    <div class="base-wrapper base_height">
+
+                        <!-- add employee -->
+                        <div class="add-employee-sec">
+                            <h2 class="bg-heading-txt">Company Detail</h2>
+
+                            <!--edit form -->
+                            <div class="edit-form-sec">
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Company Name</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">Cool Name Ideas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Employees Tracked</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">1258</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <!-- form inner end -->
+                                <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Admin Name</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">Johnny Depp</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Admin Email ID</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">johnnydeppcool88@gmail.com</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <!--form-inner  -->
+                                <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Phone Number</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">+1 895 478 3245</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Status</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt active_color">Active</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <!-- form inner end -->
+                                <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Signed Up</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">20-May-2020</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Last Logged In</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt inactive-txt">20-May-2020 / 05:56 PM</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <!--form-inner  -->
+                               <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Password</h4>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt text_dot">&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <!-- form inner end -->
+
+
+                            </div>
+                            <!-- end edit form -->
+
+
+                                <!-- bottom button sec -->
+                                <div class="button-sec-bk-days">
+                                    <button class="cancel-btn">Back</button>
+                                </div>
+                                <!-- end bottom button -->
+
+                            </div>
+                            <!-- end time section -->
+
+                        </div>
+                        <!-- end add employee -->
+
+                    </div>
+                
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <script src="js/popper.min.js"></script>
+</body>

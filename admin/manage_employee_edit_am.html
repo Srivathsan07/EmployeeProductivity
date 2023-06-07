@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Employee Productivity</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+
+            jQuery(function($) {
+
+                $(".sidebar-dropdown > a").click(function() {
+                    $(".sidebar-submenu").slideUp(200);
+                    if (
+                        $(this)
+                        .parent()
+                        .hasClass("active")
+                    ) {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .parent()
+                            .removeClass("active");
+                    } else {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .next(".sidebar-submenu")
+                            .slideDown(200);
+                        $(this)
+                            .parent()
+                            .addClass("active");
+                    }
+                });
+
+                $("#close-sidebar").click(function() {
+                    $(".page-wrapper").removeClass("toggled");
+                });
+                $("#show-sidebar").click(function() {
+                    $(".page-wrapper").addClass("toggled");
+                });
+
+
+
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="#">Employee <span>Tracking</span></a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="invite_people">
+                    <a href="#">Invite Team <span><img src="images/circle_plus.png"/></span></a>
+                </div>
+
+
+                <div class="sidebar-menu">
+                    <ul>
+
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>Manage Team</span>
+
+                            </a>
+
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="far fa-image" aria-hidden="true"></i>
+                                <span>Screenshots</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                <span>Report</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">User location</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Employee Leader ...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Admin Benchmark</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <span>Edit Profile</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-content  -->
+
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+            <div class="top_head">
+                <div class="top_head_lft"><img src="images/invite_people.png" /><span>Manage Team</span></div>
+                <div class="top_head_rgt">
+                    <div class="sidebar-header">
+                        <div class="user-pic">
+                            <img class="img-responsive img-rounded" src="images/user_profile.png" alt="User picture">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name"><strong>Denzel Washington</strong> 
+            
+          </span>
+                            <span class="user-name">Admin
+            
+          </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="container-fluid">
+
+                <div class="base-wrapper">
+
+                    <!-- add employee -->
+                    <div class="add-employee-sec">
+                        <h2 class="bg-heading-txt">Add / edit employee</h2>
+
+                        <!--edit form -->
+                        <div class="edit-form-sec">
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Emp Name</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <input type="text" class="txt-box-g " placeholder="Enter Emp Name" value="S A Steve Smi">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Emp ID</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <input type="text" class="txt-box-g " placeholder="Enter Emp ID">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- form inner end -->
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Email ID</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <input type="text" class="txt-box-g " placeholder="Enter Email ID" value="tomcruise88@gmail.com">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Location</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <input type="text" class="txt-box-g " placeholder="Enter Location" value="Utano, England">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- form inner end -->
+
+
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Department</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <select class="select-box-g edit-select-g">
+                                    <option  value= "" selected >Select Department</option>
+                                    <option >Accounts</option>
+                                    <option >HR</option>
+                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Status</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <select class="select-box-g  edit-select-g">
+                                    <option  value= "" selected >Select Status</option>
+                                    <option >Active</option>
+                                    <option >Inactive</option>
+                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- form inner end -->
+
+
+                        </div>
+                        <!-- end edit form -->
+
+                        <!-- time section -->
+                        <div class="add-working-time">
+                            <h2 class="bg-heading-txt">Select day and time</h2>
+                            <div class="select-time-sec">
+
+                                <h4 class="label-txt-g mr-3">Enter Work Timing</h4>
+                                <div class="md-form md-outline">
+                                    <input type="time" id="default-picker" class="form-control-time left-time" placeholder="Select time">
+                                </div>
+
+                                <div class="md-form md-outline">
+                                    <input type="time" id="default-picker" class="form-control-time" placeholder="Select time">
+                                </div>
+                            </div>
+
+                            <!-- table sec -->
+                            <div class="select-date-sec">
+                                <div class="table-responsive">
+                                    <table class="week-table">
+                                        <thead>
+                                            <tr class="bg-lightgreen">
+                                                <td class="days-head b-lt">Select</td>
+                                                <td><input type="checkbox" class="days-check" checked>
+                                                    <span class="checkbox-button__control"></span></td>
+                                                <td><input type="checkbox" class="days-check">
+                                                    <span class="checkbox-button__control"></span></td>
+                                                <td><input type="checkbox" class="days-check" checked>
+                                                    <span class="checkbox-button__control"></span></td>
+                                                <td><input type="checkbox" class="days-check" checked>
+                                                    <span class="checkbox-button__control"></span></td>
+                                                <td><input type="checkbox" class="days-check">
+                                                    <span class="checkbox-button__control"></span></td>
+                                                <td><input type="checkbox" class="days-check" checked>
+                                                    <span class="checkbox-button__control"></span></td>
+                                                <td class="b-rt"><input type="checkbox" class="days-check">
+                                                    <span class="checkbox-button__control"></span></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="days-head b-b-lt">Days</td>
+                                                <td>Monday</td>
+                                                <td>Tuesday</td>
+                                                <td>Wednesday</td>
+                                                <td>Thursday</td>
+                                                <td>Friday</td>
+                                                <td>Saturday</td>
+                                                <td class="b-b-rt">Sunday</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- end table sec -->
+
+                            <!-- bottom button sec -->
+                            <div class="button-sec-bk-days">
+                                <button class="cancel-btn">Cancel</button>
+                                <button class="save-btn">Send Invite</button>
+                            </div>
+                            <!-- end bottom button -->
+
+                        </div>
+                        <!-- end time section -->
+
+                    </div>
+                    <!-- end add employee -->
+
+                </div>
+
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <script src="js/popper.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('select').on('change', function() {
+                if ($(this).val()) {
+                    return $(this).css('color', 'black');
+                } else {
+                    return $(this).css('color', 'red');
+                }
+            });
+        });
+    </script>
+</body>

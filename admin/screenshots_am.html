@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Employee Productivity</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Scripts -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+
+            jQuery(function($) {
+
+                $(".sidebar-dropdown > a").click(function() {
+                    $(".sidebar-submenu").slideUp(200);
+                    if (
+                        $(this)
+                        .parent()
+                        .hasClass("active")
+                    ) {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .parent()
+                            .removeClass("active");
+                    } else {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .next(".sidebar-submenu")
+                            .slideDown(200);
+                        $(this)
+                            .parent()
+                            .addClass("active");
+                    }
+                });
+
+                $("#close-sidebar").click(function() {
+                    $(".page-wrapper").removeClass("toggled");
+                });
+                $("#show-sidebar").click(function() {
+                    $(".page-wrapper").addClass("toggled");
+                });
+
+
+
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="#">Employee <span>Tracking</span></a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="invite_people">
+                    <a href="#">Invite Team <span><img src="images/circle_plus.png"/></span></a>
+                </div>
+
+
+                <div class="sidebar-menu">
+                    <ul>
+
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>Manage Team</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="far fa-image" aria-hidden="true"></i>
+                                <span>Screenshots</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                <span>Report</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">User location</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Employee Leader ...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Admin Benchmark</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <span>Edit Profile</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-content  -->
+
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+            <div class="top_head">
+                <div class="top_head_lft"><img src="images/sc_blue.png" /><span>screenshots</span></div>
+                <div class="top_head_rgt">
+                    <div class="sidebar-header">
+                        <div class="user-pic">
+                            <img class="img-responsive img-rounded" src="images/user_profile.png" alt="User picture">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name"><strong>Denzel Washington</strong> 
+            
+          </span>
+                            <span class="user-name">Admin
+            
+          </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="container-fluid">
+                <!-- Filter Section -->
+                <div class="base-wrapper mb-3">
+                    <h2 class="bg-heading-txt">Filter</h2>
+                    <!-- Filter form section -->
+                    <div class="filter-form">
+
+                        <select class="select-box-g  filter-f edit_select">
+            <option class="select-placeholder" value= "" selected >Select Emp ID</option>
+            <option>2222</option>
+            <option>1111</option>
+        </select>
+
+                        <input type="text" class="txt-box-g filter-f" id="emp-name" placeholder="Emp Name">
+
+                        <input type="text" id="datepicker" class="date-piks txt-box-g filter-f" placeholder="Select Date">
+
+                        <button class="filter-btn-sm">Filter</button>
+                        <button class="reset-btn-sm">Reset</button>
+
+                    </div>
+                    <!-- end filter form section -->
+                </div>
+
+                <!-- end filter section -->
+
+                <!-- Table section -->
+                <div class="base-wrapper">
+                    <div class="table-head">
+                        <h2 class="table-txt-head">List of employee’s screenshots</h2>
+                        <div class="table-btn-head">
+                            <button class="export-btn">Export</button>
+                            <a href="manage_employee_add_am.html"></a>
+                        </div>
+                    </div>
+
+                    <!-- Employee table -->
+                    <div class="table-responsive emp-table">
+                        <table class="employee-table screenshot_table">
+                            <thead>
+                                <tr class="bg-lightgreen">
+                                    <td class="b-l-r">
+                                        Emp ID
+                                        <img src="images/sort-arrow.png" class="sort-img">
+                                    </td>
+                                    <td>Emp Name
+                                        <img src="images/sort-arrow.png" class="sort-img"></td>
+                                    <td>Screenshot 1</td>
+                                    <td>Screenshot 2</td>
+                                    <td>Screenshot 3</td>
+                                    <td>Screenshot 4</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>EMP01</td>
+                                    <td>Robert De Niro</td>
+                                    <td>
+                                        <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                    </td>
+                                    <tr>
+                                        <td>EMP02</td>
+                                        <td>Denzel Washington</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>EMP03</td>
+                                        <td>Russell Crowe</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>EMP04</td>
+                                        <td>Angelina Jolie</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>EMP05</td>
+                                        <td>Leonardo DiCaprio</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>EMP06</td>
+                                        <td>Tom Cruise</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>EMP07</td>
+                                        <td>John Travolta</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>EMP08</td>
+                                        <td>Sylvester Stallone</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>EMP09</td>
+                                        <td>Kate Winslet</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>EMP10</td>
+                                        <td>Charlize Theron</td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="./images/sc_blue.png" alt="view" class="sc-btn" data-toggle="modal" data-target="#sc-modal"></a>
+                                        </td>
+                                    </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- Employee table -->
+
+                    <!-- pagination -->
+                    <div class="pagination-sec">
+                        <div class="pagination">
+                            <a href="#">
+                                < </a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="active">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <a href="#">></a>
+                        </div>
+                    </div>
+
+                    <!-- end pagination -->
+                    <!-- modal -->
+                    <div class="modal fade" id="sc-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content sc-modal-content">
+                                <div class="modal-header sc-modal-head">
+                                    <h2 class="bg-heading-txt">screenshot 1</h2>
+                                    <img src="./images/close.png" class="close sc-close" data-dismiss="modal" aria-label="Close">
+                                </div>
+                                <div class="modal-body sc-modal-body">
+                                    <img src="./images/sc1.png" class="sc-inner-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end modal -->
+
+                </div>
+                <!-- End Table Section -->
+
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.edit_select').on('change', function() {
+                if ($(this).val()) {
+                    return $(this).css('color', 'black');
+                } else {
+                    return $(this).css('color', 'red');
+                }
+            });
+        });
+    </script>
+</body>

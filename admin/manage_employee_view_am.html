@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Employee Productivity</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!-- Scripts -->
+
+
+
+    <script>
+        $(document).ready(function() {
+
+
+            jQuery(function($) {
+
+                $(".sidebar-dropdown > a").click(function() {
+                    $(".sidebar-submenu").slideUp(200);
+                    if (
+                        $(this)
+                        .parent()
+                        .hasClass("active")
+                    ) {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .parent()
+                            .removeClass("active");
+                    } else {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this)
+                            .next(".sidebar-submenu")
+                            .slideDown(200);
+                        $(this)
+                            .parent()
+                            .addClass("active");
+                    }
+                });
+
+                $("#close-sidebar").click(function() {
+                    $(".page-wrapper").removeClass("toggled");
+                });
+                $("#show-sidebar").click(function() {
+                    $(".page-wrapper").addClass("toggled");
+                });
+
+
+
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="#">Employee <span>Tracking</span></a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="invite_people">
+                    <a href="#">Invite Team <span><img src="images/circle_plus.png"/></span></a>
+                </div>
+
+
+                <div class="sidebar-menu">
+                    <ul>
+
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>Manage Team</span>
+
+                            </a>
+
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="far fa-image" aria-hidden="true"></i>
+                                <span>Screenshots</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                <span>Report</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">User location</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Employee Leader ...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Admin Benchmark</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <span>Edit Profile</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-content  -->
+
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+            <div class="top_head">
+                <div class="top_head_lft"><img src="images/invite_people.png" /><span>Manage Team</span></div>
+                <div class="top_head_rgt">
+                    <div class="sidebar-header">
+                        <div class="user-pic">
+                            <img class="img-responsive img-rounded" src="images/user_profile.png" alt="User picture">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name"><strong>Denzel Washington</strong> 
+            
+          </span>
+                            <span class="user-name">Admin
+            
+          </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="container-fluid">
+
+                <div class="base-wrapper">
+
+                    <!-- add employee -->
+                    <div class="add-employee-sec">
+                        <h2 class="bg-heading-txt">employee Detail</h2>
+
+                        <!--edit form -->
+                        <div class="edit-form-sec">
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Emp Name</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">S A Steve Smith</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Emp ID</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">EMP01</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- form inner end -->
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Email ID</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">tomcruise88@gmail.com</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Location</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">Utano, England</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- form inner end -->
+
+
+
+                            <!--form-inner  -->
+                            <div class="form-inner mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Department</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt">Admin</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-label">
+                                                <h4 class="label-txt-g">Status</h4>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 form-input-side">
+                                                <h4 class="employe-detail-txt inactive-txt">Inactive</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- form inner end -->
+
+
+                        </div>
+                        <!-- end edit form -->
+
+                        <!-- time section -->
+                        <div class="add-working-time">
+
+                            <h2 class="bg-heading-txt">Work day and time</h2>
+                            <div class="select-time-sec">
+                                <div class="form-inner col-12">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 from-inner-left p-0">
+                                            <h4 class="label-txt-g">Monday to Friday</h4>
+                                        </div>
+
+                                        <div class="col-lg-10 col-md-8 col-sm-8 col-xs-6 from-inner-right">
+                                            <h4 class="employe-detail-txt">10:00 AM - 06:00 PM</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- Worked Hours section -->
+                            <div class="worked-hours-sec">
+                                <h2 class="bg-heading-txt">Worked hours</h2>
+                                <!-- date picker blocks -->
+                                <div class="date-sec">
+
+                                    <div class="date-selection">
+                                        <input type="text" id="datepicker" class="date-piks" />
+                                    </div>
+
+                                    <!-- working details -->
+                                    <div class="working-details">
+                                        <!--form-inner  -->
+                                        <div class="form-inner mb-4">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 form-label">
+                                                            <h4 class="label-txt-g">Active Hours</h4>
+                                                        </div>
+
+                                                        <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12 form-input-side">
+                                                            <h4 class="employe-detail-txt">06 hours : 55 minutes</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 form-label">
+                                                            <h4 class="label-txt-g">Inactive Hours</h4>
+                                                        </div>
+
+                                                        <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 form-input-side">
+                                                            <h4 class="employe-detail-txt">01 hour : 08 minutes</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- form inner end -->
+
+                                        <!--form-inner  -->
+                                        <div class="form-inner ">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-left">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 form-label">
+                                                            <h4 class="label-txt-g">Productive Hours</h4>
+                                                        </div>
+
+                                                        <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12 form-input-side">
+                                                            <h4 class="employe-detail-txt">02 hours : 28 minutes</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 from-inner-right">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 form-label">
+                                                            <h4 class="label-txt-g">Non - Productive Hours</h4>
+                                                        </div>
+
+                                                        <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 form-input-side">
+                                                            <h4 class="employe-detail-txt">01 hour : 48 minutes</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- form inner end -->
+
+
+                                    </div>
+
+                                    <!-- end working details -->
+
+                                </div>
+                                <!-- end date picker block -->
+
+
+
+                            </div>
+                            <!-- end worked Hours section -->
+
+
+
+                        </div>
+                        <!-- end time section -->
+
+                    </div>
+                    <!-- end add employee -->
+
+                </div>
+
+                <!-- Screen shot section -->
+
+                <div class="base-wrapper mt-3">
+
+                    <div class="worked-hours-sec">
+                        <h2 class="bg-heading-txt">screenshots</h2>
+
+                        <!-- date picker blocks -->
+                        <div class="date-sec">
+
+                            <div class="date-selection">
+                                <select class="select-box-g  day-select-g edit_select">
+                                        <option  value= "" selected ></option>
+                                        <option >Day</option>
+                                        <option ></option>
+                                    </select>
+                                <div class="date-pick">
+                                    <input type="text" id="datepicker" class="date-piks" />
+                                </div>
+                            </div>
+
+                            <!-- screen shot -->
+                            <div class="screen-shot-sec">
+
+                                <!-- Screenshot -1 -->
+                                <div class="inner-sc">
+                                    <img src="./images/sc.png" class="sc-img">
+                                    <button class="sc-btn" data-toggle="modal" data-target="#sc-modal"> Screenshot 1 </button>
+                                </div>
+                                <!-- screenshot end -->
+
+                                <!-- Screenshot -1 -->
+                                <div class="inner-sc">
+                                    <img src="./images/sc.png" class="sc-img">
+                                    <button class="sc-btn" data-toggle="modal" data-target="#sc-modal"> Screenshot 2 </button>
+                                </div>
+                                <!-- screenshot end -->
+
+                                <!-- Screenshot -1 -->
+                                <div class="inner-sc">
+                                    <img src="./images/sc.png" class="sc-img">
+                                    <button class="sc-btn" data-toggle="modal" data-target="#sc-modal"> Screenshot 3 </button>
+                                </div>
+                                <!-- screenshot end -->
+
+
+                                <!-- Screenshot -1 -->
+                                <div class="inner-sc">
+                                    <img src="./images/sc.png" class="sc-img">
+                                    <button class="sc-btn" data-toggle="modal" data-target="#sc-modal"> Screenshot 4 </button>
+                                </div>
+                                <!-- screenshot end -->
+
+                            </div>
+
+
+                            <!-- end screen shot -->
+
+
+
+                        </div>
+                        <!-- end date picker block -->
+
+
+
+                    </div>
+                </div>
+
+                <!-- end screen shot section -->
+
+            </div>
+
+            <!-- screenshot modal -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="sc-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content sc-modal-content">
+                        <div class="modal-header sc-modal-head">
+                            <h2 class="bg-heading-txt">screenshot 1</h2>
+                            <img src="./images/close.png" class="close sc-close" data-dismiss="modal" aria-label="Close">
+
+                            </button>
+                        </div>
+                        <div class="modal-body sc-modal-body">
+                            <img src="./images/sc1.png" class="sc-inner-img">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- end screen shot modal-->
+        </main>
+        <!-- page-content" -->
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $("#datepicker").datepicker();
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.edit_select').on('change', function() {
+                if ($(this).val()) {
+                    return $(this).css('color', 'black');
+                } else {
+                    return $(this).css('color', 'red');
+                }
+            });
+        });
+    </script>
+
+</body>
